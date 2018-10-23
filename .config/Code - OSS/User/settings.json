@@ -1,0 +1,7 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "window.menuBarVisibility": "toggle"
+}

@@ -1,0 +1,2 @@
+active-opacity = 1; # default opacity for active windows. Might be overwritten by how a program is configured
+inactive-opacity = 0.9; # opacity for inactive windows
