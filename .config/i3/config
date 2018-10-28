@@ -162,10 +162,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always --no-startup-id "setxkbmap gb"
-
 exec_always --no-startup-id "sh $HOME/.config/polybar/launch.sh"
 
 exec_always --no-startup-id compton --config "$HOME/.config/compton/config"
 
-exec_always --no-startup-id feh --bg-scale "$HOME/.wallpapers/space.png"
+exec_always --no-startup-id "$HOME/.fehbg"
+
+exec --no-startup-id "steam -silent"
+
+exec --no-startup-id alacritty
+
+exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+
+exec --no-startup-id i3-msg 'workspace 3; exec chromium'
+
+exec --no-startup-id i3-msg 'workspace 1'

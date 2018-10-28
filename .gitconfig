@@ -1,0 +1,22 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Simon Dickson
+	email = simon@simonhdickson.com
+	signingkey = 03CF419CC3AD75B4
+[core]
+	editor = code --wait -name
+	excludeFiles = /home/simon/.gitignore_global
+[merge]
+	tool = code
+[difftool "code"]
+	cmd = code --wait -n --diff $LOCAL $REMOTE
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[push]
+	default = current
+[hub]
+	protocol = ssh
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg2

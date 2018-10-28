@@ -16,26 +16,33 @@ HYPHEN_INSENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  cargo
   git
+  rust
+  ssh-agent
+  gpg-agent
+  sudo
+  vscode
+  zsh-completions
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH=$HOME/bin:$HOME/.local/share/flatpak/exports/bin:$PATH
+
 export LANG=en_GB.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export GPG_TTY=$(tty)
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
+# dots functions
 alias dots='git --git-dir=$HOME/.dots.git/ --work-tree=$HOME'
+alias dots-update='dots add --update $HOME'
+
+eval "$(hub alias -s)"
+alias update-all="sh $HOME/.scripts/update-all.sh"
+alias gpg="gpg2"
+
+setxkbmap -layout gb
